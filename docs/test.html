@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אינפוגרפיקה: תוכנית האב של המבנה הפנימי</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Heebo', sans-serif;
+            background-color: #f8fafc;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .flowchart-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .flowchart-step .number {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.5rem;
+            margin-left: 1.5rem;
+        }
+        .flowchart-arrow {
+            height: 40px;
+            width: 2px;
+            margin: 0.5rem auto;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+    <main class="max-w-7xl mx-auto p-4 md:p-8">
+        <header class="text-center my-8 md:my-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#073B4C]">תוכנית האב של המבנה הפנימי</h1>
+            <p class="text-xl md:text-2xl mt-4 text-[#118AB2]">מסע אדריכלי לגילוי מפת החוזקות האישית שלך</p>
+        </header>
+
+        <section id="intro" class="my-12 md:my-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 order-2 md:order-1">
+                    <h2 class="text-3xl font-extrabold text-[#073B4C] mb-4">המסע האדריכלי שלך</h2>
+                    <p class="text-lg mb-4">
+                        המטרה שלנו היא לשרטט את ה-"Blueprint", תוכנית האב הייחודית של האישיות, החוזקות והערכים שלנו. נחשוב על עצמנו כעל מבנה ארכיטקטוני מפואר, ונלמד לזהות את היסודות, הקירות והחדרים שמרכיבים אותנו.
+                    </p>
+                    <p class="text-lg">
+                        התהליך מחולק לארבעה שלבים ברורים שיובילו אותנו מהכנת "חומרי הגלם" ועד ליצירת התוכנית הסופית.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col justify-center items-center text-center order-1 md:order-2">
+                     <div class="text-8xl md:text-9xl font-black text-[#FF6B6B]">45</div>
+                     <div class="text-2xl md:text-3xl font-bold text-[#073B4C] mt-2">דקות</div>
+                     <p class="text-lg mt-4 text-[#118AB2]">של יצירה, גילוי והעצמה אישית</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="process-overview" class="my-12 md:my-20">
+             <h2 class="text-3xl md:text-4xl font-extrabold text-[#073B4C] text-center mb-10">ארבעת שלבי המסע</h2>
+             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                 <div class="bg-white rounded-2xl shadow-lg p-6">
+                     <div class="text-4xl font-black text-[#FF6B6B]">1</div>
+                     <h3 class="text-xl font-bold mt-2 text-[#073B4C]">הכנת חומרי הגלם</h3>
+                     <p class="mt-2 text-slate-600">איסוף ה"לבנים" - החוזקות שלנו מהפעילות הקודמת.</p>
+                     <div class="text-lg font-bold text-[#118AB2] mt-3">5 דקות</div>
+                 </div>
+                 <div class="bg-white rounded-2xl shadow-lg p-6">
+                     <div class="text-4xl font-black text-[#FFD166]">2</div>
+                     <h3 class="text-xl font-bold mt-2 text-[#073B4C]">הבנת המטאפורה</h3>
+                     <p class="mt-2 text-slate-600">לימוד השפה האדריכלית של המבנה הפנימי שלנו.</p>
+                     <div class="text-lg font-bold text-[#118AB2] mt-3">10 דקות</div>
+                 </div>
+                 <div class="bg-white rounded-2xl shadow-lg p-6">
+                     <div class="text-4xl font-black text-[#06D6A0]">3</div>
+                     <h3 class="text-xl font-bold mt-2 text-[#073B4C]">שרטוט תוכנית האב</h3>
+                     <p class="mt-2 text-slate-600">השלב המרכזי של יצירת המפה האישית שלנו.</p>
+                     <div class="text-lg font-bold text-[#118AB2] mt-3">25 דקות</div>
+                 </div>
+                 <div class="bg-white rounded-2xl shadow-lg p-6">
+                     <div class="text-4xl font-black text-[#118AB2]">4</div>
+                     <h3 class="text-xl font-bold mt-2 text-[#073B4C]">סיכום ושיתוף</h3>
+                     <p class="mt-2 text-slate-600">הצגת התוכניות ושמירתן בתיק העבודות.</p>
+                     <div class="text-lg font-bold text-[#118AB2] mt-3">5 דקות</div>
+                 </div>
+             </div>
+        </section>
+
+        <section id="deconstruction" class="my-12 md:my-20">
+             <h2 class="text-3xl md:text-4xl font-extrabold text-[#073B4C] text-center mb-10">פירוק תוכנית האב: האלמנטים המרכזיים</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-[#073B4C] mb-4">חלוקת זמן הפעילות</h3>
+                    <p class="text-lg mb-4 text-slate-600">תרשים זה מציג את חלוקת הזמן היחסית בין ארבעת שלבי הסדנה. ניתן לראות כי שלב השרטוט הוא המהותי ביותר, ומקבל למעלה ממחצית מזמן הפעילות הכולל.</p>
+                    <div class="chart-container">
+                        <canvas id="timeAllocationChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-[#073B4C] mb-4">דוגמאות ליסודות (ערכים)</h3>
+                    <p class="text-lg mb-4 text-slate-600">היסודות הם ערכי הבסיס שעליהם כל המבנה שלנו נשען. התרשים מציג דוגמאות לערכים מרכזיים. מומלץ לבחור 3 עד 5 יסודות שהם קריטיים עבורכם.</p>
+                     <div class="chart-container">
+                        <canvas id="foundationsChart"></canvas>
+                    </div>
+                </div>
+                <div class="md:col-span-2 bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                     <h3 class="text-2xl font-bold text-[#073B4C] mb-4">פרופיל כישרונות וחוזקות (חדרים)</h3>
+                     <p class="text-lg mb-4 text-slate-600">ה"חדרים" מייצגים את הכישרונות והתכונות הייחודיים שלנו. תרשים הרדאר ממחיש פרופיל דוגמה של חוזקות בתחומים שונים כמו יצירתיות, לוגיקה, כישורים חברתיים ועוד.</p>
+                     <div class="chart-container">
+                        <canvas id="roomsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="drawing-process" class="my-12 md:my-20">
+             <h2 class="text-3xl md:text-4xl font-extrabold text-[#073B4C] text-center mb-10">תהליך השרטוט: שלב אחר שלב</h2>
+            <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <div class="flowchart-step">
+                    <div class="number text-white" style="background-color: #FF6B6B;">1</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-[#073B4C]">קביעת היסודות</h4>
+                        <p class="text-slate-600">רישום 3-5 ערכי בסיס בתחתית התוכנית.</p>
+                    </div>
+                </div>
+                <div class="flowchart-arrow bg-[#FFD166]"></div>
+                 <div class="flowchart-step">
+                    <div class="number text-white" style="background-color: #FFD166;">2</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-[#073B4C]">בניית הקירות הנושאים</h4>
+                        <p class="text-slate-600">הוספת החוזקות המרכזיות שמגדירות את המבנה.</p>
+                    </div>
+                </div>
+                <div class="flowchart-arrow bg-[#06D6A0]"></div>
+                 <div class="flowchart-step">
+                    <div class="number text-white" style="background-color: #06D6A0;">3</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-[#073B4C]">עיצוב החדרים</h4>
+                        <p class="text-slate-600">שרטוט החללים ומתן שמות מטאפוריים.</p>
+                    </div>
+                </div>
+                <div class="flowchart-arrow bg-[#118AB2]"></div>
+                 <div class="flowchart-step">
+                    <div class="number text-white" style="background-color: #118AB2;">4</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-[#073B4C]">הוספת הפרטים</h4>
+                        <p class="text-slate-600">שילוב אלמנטים מיוחדים כמו חלונות ודלתות.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center my-8 md:my-12">
+            <p class="text-lg text-[#073B4C] font-bold">"תוכנית האב" שלכם היא מסמך חי ונושם.</p>
+            <p class="text-slate-600 mt-2">שמרו אותה, חזרו אליה, וזכרו תמיד את המבנה המפואר שהוא אתם.</p>
+        </footer>
+    </main>
+
+    <script>
+        const tooltipTitleCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+
+        function wrapLabel(label) {
+            const maxLength = 16;
+            if (typeof label !== 'string' || label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxLength && currentLine.length > 0) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        }
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const energeticPalette = ['#FF6B6B', '#FFD166', '#06D6A0', '#118AB2', '#073B4C'];
+
+            const timeCtx = document.getElementById('timeAllocationChart').getContext('2d');
+            new Chart(timeCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['הכנת חומרי גלם', 'הבנת המטאפורה', 'שרטוט תוכנית האב', 'סיכום ושיתוף'],
+                    datasets: [{
+                        label: 'התפלגות זמן (דקות)',
+                        data: [5, 10, 25, 5],
+                        backgroundColor: energeticPalette.slice(0, 4),
+                        borderColor: '#ffffff',
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        ...tooltipTitleCallback.plugins,
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    family: "'Heebo', sans-serif",
+                                    size: 14
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            const foundationsCtx = document.getElementById('foundationsChart').getContext('2d');
+            const foundationLabels = ['כנות ויושרה', 'משפחה וחברות', 'התמדה ונחישות', 'אופטימיות ושמחת חיים', 'יצירתיות וחדשנות'].map(wrapLabel);
+            new Chart(foundationsCtx, {
+                type: 'bar',
+                data: {
+                    labels: foundationLabels,
+                    datasets: [{
+                        label: 'דוגמאות לערכי יסוד',
+                        data: [95, 92, 88, 85, 82],
+                        backgroundColor: energeticPalette[3] + 'E6',
+                        borderColor: energeticPalette[3],
+                        borderWidth: 2,
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            display: false,
+                        },
+                        y: {
+                           ticks: {
+                                font: {
+                                    family: "'Heebo', sans-serif",
+                                    size: 14
+                                }
+                           }
+                        }
+                    },
+                    plugins: {
+                        ...tooltipTitleCallback.plugins,
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+
+            const roomsCtx = document.getElementById('roomsChart').getContext('2d');
+            const roomLabels = ['כישורים חברתיים', 'יצירתיות ודמיון', 'חשיבה לוגית', 'מנהיגות והובלה', 'אומץ והתמודדות'].map(wrapLabel);
+            new Chart(roomsCtx, {
+                type: 'radar',
+                data: {
+                    labels: roomLabels,
+                    datasets: [{
+                        label: 'פרופיל חוזקות',
+                        data: [8, 9, 7, 6, 8],
+                        fill: true,
+                        backgroundColor: energeticPalette[2] + '80',
+                        borderColor: energeticPalette[2],
+                        pointBackgroundColor: energeticPalette[2],
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: energeticPalette[2]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                           angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
+                           grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                           pointLabels: {
+                                font: {
+                                    family: "'Heebo', sans-serif",
+                                    size: 14
+                                }
+                           },
+                           ticks: {
+                                backdropColor: 'transparent',
+                                stepSize: 2
+                           }
+                        }
+                    },
+                    plugins: {
+                        ...tooltipTitleCallback.plugins,
+                        legend: {
+                           position: 'bottom',
+                           labels: {
+                               font: {
+                                   family: "'Heebo', sans-serif",
+                                   size: 14
+                               }
+                           }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
